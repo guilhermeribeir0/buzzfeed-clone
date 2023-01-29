@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { flatMap } from 'rxjs';
 
 @Component({
   selector: 'app-quizz',
@@ -6,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quizz.component.css']
 })
 export class QuizzComponent implements OnInit {
+
+  title: string = "";
+  
+  questions: any;
+  questionSelected :any;
+  answers: string[] = [];
+  answerSelected: string = "";
+
+  questionIndex: number = 0;
+  questionMaxIndex: number = 0;
+
+  fineshed:boolean = false;
 
   constructor() { }
 
